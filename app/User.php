@@ -46,9 +46,9 @@ class User extends Authenticatable
     {
         // 既にフォローしているかの確認
         $exist = $this->is_following($userId);
-        // 相手が自分自身ではないかの確認
+        
         $its_me = $this->id == $userId;
-    
+
         if ($exist || $its_me) {
             // 既にフォローしていれば何もしない
             return false;
@@ -65,7 +65,6 @@ class User extends Authenticatable
         $exist = $this->is_following($userId);
         // 相手が自分自身ではないかの確認
         $its_me = $this->id == $userId;
-    
         if ($exist && !$its_me) {
             // 既にフォローしていればフォローを外す
             $this->followings()->detach($userId);

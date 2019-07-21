@@ -16,6 +16,8 @@
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li class="dropdown-item"><a href="#">マイプロフィール</a></li>
                             <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('users.favorites','お気に入り一覧', ['id'=>Auth::id()]) !!}</a></li>
+                            <li class="dropdown-divider"></li>
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li> 
                         </ul>
                     </li>
